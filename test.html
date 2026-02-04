@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Bilimingizni sinang</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Philosopher:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-test">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Buxoro Xonligi</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Bosh sahifa</a></li>
+                <li><a href="bukhara.html" class="nav-link">Buxoro Xonligi</a></li>
+                <li><a href="europe.html" class="nav-link">Yevropa</a></li>
+                <li><a href="comparison.html" class="nav-link">Taqqoslash</a></li>
+                <li><a href="test.html" class="nav-link active">Test</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero test-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content fade-up">
+                <h1 class="page-title">Bilimingizni sinang</h1>
+                <p class="page-subtitle">Buxoro Xonligi va Yevropa tarixi bo'yicha test</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Container -->
+    <section class="test-section">
+        <div class="container">
+            <div class="test-container" id="testContainer">
+                <!-- Intro Screen -->
+                <div class="test-intro" id="testIntro">
+                    <div class="intro-content fade-up">
+                        <h2>Test haqida</h2>
+                        <div class="test-info">
+                            <div class="info-item">
+                                <div class="info-icon">📝</div>
+                                <div class="info-text">
+                                    <strong>Savollar soni:</strong> 20 ta
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">⏱️</div>
+                                <div class="info-text">
+                                    <strong>Vaqt:</strong> Cheklanmagan
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-icon">✅</div>
+                                <div class="info-text">
+                                    <strong>O'tish balli:</strong> 70%
+                                </div>
+                            </div>
+                        </div>
+                        <p>Testda Buxoro Xonligi, Yevropa tarixi va ularning taqqoslashiga oid savollar berilgan. Har bir savolda to'g'ri javob faqat bittadir.</p>
+                        <button class="btn btn-primary start-test" onclick="startTest()">Testni boshlash</button>
+                    </div>
+                </div>
+
+                <!-- Quiz Questions -->
+                <div class="quiz-content" id="quizContent" style="display: none;">
+                    <div class="quiz-header">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressBar"></div>
+                        </div>
+                        <div class="quiz-info">
+                            <span id="questionNumber">Savol 1/20</span>
+                            <span id="score">Ball: 0</span>
+                        </div>
+                    </div>
+
+                    <div class="question-container" id="questionContainer">
+                        <!-- Questions will be injected here by JavaScript -->
+                    </div>
+
+                    <div class="quiz-controls">
+                        <button class="btn btn-secondary" id="prevBtn" onclick="prevQuestion()" disabled>← Oldingi</button>
+                        <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()">Keyingi →</button>
+                        <button class="btn btn-success" id="submitBtn" onclick="submitTest()" style="display: none;">Yakunlash</button>
+                    </div>
+                </div>
+
+                <!-- Results Screen -->
+                <div class="test-results" id="testResults" style="display: none;">
+                    <div class="results-content fade-up">
+                        <div class="results-icon" id="resultsIcon"></div>
+                        <h2 id="resultsTitle"></h2>
+                        <div class="results-score">
+                            <div class="score-circle">
+                                <span id="finalScore">0</span>
+                                <span class="score-total">/20</span>
+                            </div>
+                            <div class="score-percentage" id="scorePercentage">0%</div>
+                        </div>
+                        <div class="results-message" id="resultsMessage"></div>
+                        <div class="results-buttons">
+                            <button class="btn btn-primary" onclick="restartTest()">Qayta urinish</button>
+                            <a href="index.html" class="btn btn-secondary">Bosh sahifa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section fade-up">
+                    <h3>Buxoro Xonligi</h3>
+                    <p>Ta'lim maqsadidagi tarixiy ma'lumotlar sayti</p>
+                </div>
+                <div class="footer-section fade-up" style="animation-delay: 0.1s">
+                    <h3>Havolalar</h3>
+                    <ul>
+                        <li><a href="index.html">Bosh sahifa</a></li>
+                        <li><a href="bukhara.html">Buxoro Xonligi</a></li>
+                        <li><a href="europe.html">Yevropa tarixi</a></li>
+                        <li><a href="comparison.html">Taqqoslash</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section fade-up" style="animation-delay: 0.2s">
+                    <h3>Ma'lumot</h3>
+                    <p>9-sinf o'quvchilari uchun mo'ljallangan</p>
+                    <p>© 2024 Buxoro Xonligi Sayti</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="test-data.js"></script>
+</body>
+</html>
